@@ -1,7 +1,7 @@
 # Welcome to Flight Service
 
 ## Project Setup
-- c;pme the project on your local
+- clone the project on your local
 - Execute `npm install` on the same path as of your root directory of teh downloaded
 project
 - Create a `.env` file in the root directory and add the following enviroment variable
@@ -19,5 +19,6 @@ following piece of json
     "dialect": "mysql"
   }
 
-
 ```
+- once you have added your db config as listed above , go to the src folder from
+your terminal and .execute `npx sequelize db:create`
