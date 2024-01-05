@@ -17,7 +17,8 @@ class CityRepository {
             where:{
                 id: cityid
             }
-          })
+          });
+          return true;
         }catch(error){
            throw {error};
         }
