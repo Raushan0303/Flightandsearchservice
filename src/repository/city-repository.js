@@ -26,12 +26,20 @@ class CityRepository {
 
     async updateCity (cityid,data) {
         try{
+            // the below approach also work but did not return updated object
+            // if we are using postrage then returning: true can be used, else not
             const city = await City.update(data,{
                 where:{
                     id:cityid
                 }
             });
-            return city;
+            // const city = await City.findByPk(cityId);
+            // city.name = data.name;
+            
+            // await city.save();
+            
+             return city;
+            
         }catch(error){
             console.error("Something went wrong in repository layer");
             throw {error};
