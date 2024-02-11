@@ -55,9 +55,10 @@ class CityRepository {
             throw {error};
         }
     }
-    async getAllCities(filter){ //filter can be empty parameter also
+
+    async getAllCities(filter) {
         try {
-            if(filter.name){
+            if (filter && filter.name) { // Check if filter and filter.name are defined
                 const cities = await City.findAll({
                     where: {
                         name: {
@@ -71,8 +72,8 @@ class CityRepository {
             return cities;
         } catch (error) {
             console.error("Something went wrong in repository layer");
-            throw {error};
+            throw { error };
         }
     }
-}
+}    
 module.exports = CityRepository;
