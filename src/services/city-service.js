@@ -13,7 +13,15 @@ class CityService{
             throw {error};
         }
     } 
-
+    async bulkCreateAirports(airportsData){
+        try {
+            const airports = await this.airportRepository.bulkCreateAirports(airportsData);
+            return airports;
+        } catch (error) {
+            console.log("something went wrong at service layer");
+            throw {error};
+        }
+    }
     async deleteCity(cityid){
         try{
             const response = await this.cityRepository.deleteCity(cityid);

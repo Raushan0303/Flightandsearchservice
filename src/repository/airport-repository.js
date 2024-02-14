@@ -2,18 +2,9 @@ const {Airport} = require('../models/airport');
 const { Op } = require("sequelize");
 
 class AirportRepository{
-    async createAirport(
-        {
-            name,
-            adress,
-            cityId
-        }){
+    async createAirport({name,adress,cityId}){
             try {
-                const airport = await Airport.create({
-                    name,
-                    adress,
-                    cityId
-                });
+                const airport = await Airport.create({name,adress, cityId});
                 return airport;
             } catch (error) {
                 console.log("An error occured: at repository layer",error);
