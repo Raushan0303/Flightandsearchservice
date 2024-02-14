@@ -52,13 +52,15 @@ class AirportRepository{
                 console.log("An error occured: at repository layer",error);
             }
     }
-    async getAirport(){
+    async getAllAirports(){
         try {
-            const airport = await Airport.findAll();
-            return airport;
+            const airports = await Airport.findAll();
+            return airports;
         } catch (error) {
             console.log("An error occured: at repository layer",error);
         }
 }
       
 }
+
+module.exports= AirportRepository;
