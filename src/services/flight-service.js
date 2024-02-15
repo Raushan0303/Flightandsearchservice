@@ -1,24 +1,25 @@
-const {FlightRepository, AirplaneRepository} = require('../repository/index');
+const {FlightRespository, AirplaneRespository} = require('../repository/index');
+const { compareTime } = require('../utils/helper');
 
-const {compareTime} = require('../utils/helper');
+class FlightService {
 
-class FlightService{
-    constructor(){
-        this.airplaneRepository = new AirplaneRepository();
-        this.flightRepository = new FlightRepository();
+    constructor() {
+        this.airplaneRespository = new AirplaneRespository();
+        this.flightrespository = new FlightRespository();
     }
-    async createFlight(data){
+
+    async createFlight(data) {
         try {
             if(!compareTime(data.arrivalTime, data.departureTime)) {
                 throw {error: 'Arrival time cannot be less than departure time'};
             }
-            const airplane = await this.airplaneRepository.getAirplane(data.airplaneId);
-            const flight = await this.flightRepository.createFlight({
-                ...data, totalSeats:airplane.capacity
+            const airplane = await this.airplaneRespository.getAirplane(data.airplaneId);
+            const flight = await this.flightrespository.createFlight({
+                ...data, totalSeats:airplane.capacity 
             });
             return flight;
         } catch (error) {
-            console.log("something went wrong at service layer");
+            console.log("Something went wrong at service layer");
             throw {error};
         }
     }
@@ -54,10 +55,6 @@ class FlightService{
     }
     
 }
-
-
-
-
 
 module.exports = FlightService;
 

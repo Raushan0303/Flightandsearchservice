@@ -1,4 +1,5 @@
-const {FlightService} = require('../services/index')
+const {FlightService} = require('../services/index');
+const { SuccessCodes } = require('../utils/error-codes');
 
 const flightService = new FlightService();
 
@@ -97,8 +98,4 @@ module.exports = {
     getAll,
     get,
     update
-}
-
-module.exports = {
-    create
 }
