@@ -13,15 +13,7 @@ class CityService{
             throw {error};
         }
     } 
-    async bulkCreateCities(data) {
-        try {
-            const cities = await City.bulkCreateCities(data);
-            return cities;
-        } catch (error) {
-            console.error('An error occurred while bulk creating cities:', error);
-            throw error; // Re-throw the error to propagate it to the caller
-        }
-    }
+    
     async deleteCity(cityid){
         try{
             const response = await this.cityRepository.deleteCity(cityid);

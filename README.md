@@ -42,3 +42,5 @@ your terminal and .execute `npx sequelize db:create`
  ### Airport -> id,name, adress, city_id, created_at, updated_at
      Relationship -> city has many airports and Airports belongs to a city(one to many
      relations)
+
+     
