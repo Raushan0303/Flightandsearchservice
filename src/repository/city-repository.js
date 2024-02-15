@@ -1,4 +1,4 @@
-const {City} = require('../models/index');
+const { City } = require('../models/index');
 const { Op } = require("sequelize");
 
 class CityRepository {
@@ -12,9 +12,9 @@ class CityRepository {
             console.error('An error occurred:', error); 
         }
     }
-    async bulkCreateCities(cityDataArray) {
+    async bulkCreateCities({name}) {
         try {
-            const cities = await City.bulkCreate(cityDataArray);
+            const cities = await City.bulkCreateCities({name});
             return cities;
         } catch (error) {
             console.error('An error occurred while bulk creating cities:', error);

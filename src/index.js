@@ -20,9 +20,9 @@ const setupAndStartServer = () =>{
 
     app.listen(PORT, async()=>{
         console.log(`server started at ${PORT}`);
-        if(process.env.SYNC_DB){
-            db.sequelize.sync({alter: true});
-        }
+        // if(process.env.SYNC_DB){
+        //     db.sequelize.sync({alter: true});
+        // }
     //     // const repo = new CityRepository();
     //     // repo.createCity({name: "New Delhi"});
     //    const city = await City.findOne({

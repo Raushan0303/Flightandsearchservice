@@ -25,7 +25,7 @@ const create = async(req,res)=>{
 const createBulk = async(req,res)=>{
     try{
         const cities = req.body; // Array of city objects
-        const createdCities = await City.bulkCreate(cities);
+        const createdCities = await City.bulkCreateCities(cities);
         return res.status(201).json({
             data: createdCities,
             success: true,

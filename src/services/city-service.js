@@ -13,13 +13,13 @@ class CityService{
             throw {error};
         }
     } 
-    async bulkCreateAirports(airportsData){
+    async bulkCreateCities(data) {
         try {
-            const airports = await this.airportRepository.bulkCreateAirports(airportsData);
-            return airports;
+            const cities = await City.bulkCreateCities(data);
+            return cities;
         } catch (error) {
-            console.log("something went wrong at service layer");
-            throw {error};
+            console.error('An error occurred while bulk creating cities:', error);
+            throw error; // Re-throw the error to propagate it to the caller
         }
     }
     async deleteCity(cityid){
