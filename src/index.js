@@ -4,7 +4,8 @@ const bodyParser = require("body-parser");
 const {PORT} = require('./config/serverConfig');
 const ApiRoutes = require('./routes/index');
 
-const db = require('./models/index')
+const db = require('./models/index');
+const {Airplane} = require("./models/index");
 
 // const {Airport, City} = require('./models/index');
 // const CityRepository = require('./repository/city-repository')
@@ -43,7 +44,9 @@ const setupAndStartServer = () =>{
     // //    })
        
     //    console.log(city, airports);
-        
+        await Airplane.create({
+            modelNumber:'Bombardier CRJ'
+        });
     });
 }
 
