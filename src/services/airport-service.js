@@ -43,7 +43,7 @@ class AirportService{
     }
     async getALLAirports(data){
         try {
-            const airports = await this.airportRepository.getALLAirports(data);
+            const airports = await this.airportRepository.getAllAirports(data);
             return airports;
         } catch (error) {
             console.log("something went wrong at service layer");

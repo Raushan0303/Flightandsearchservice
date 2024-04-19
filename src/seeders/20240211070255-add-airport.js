@@ -41,6 +41,12 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      {
+        name: 'purnea airport',
+        cityId: 12,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
 
     ])
   },
